@@ -1,0 +1,37 @@
+/*ALTER TABLE  ADD FOREIGN KEY () REFERENCES () */
+
+
+ALTER TABLE cpu ADD FOREIGN KEY (idmarcacpu) REFERENCES marcacpu (id);
+ALTER TABLE motherboard ADD FOREIGN KEY (idmarcamotherboard) REFERENCES marcamotherboard(id);
+ALTER TABLE discoduro ADD FOREIGN KEY (idmarcadiscoduro) REFERENCES marcadiscoduro (id);
+ALTER TABLE `cd-dvd` ADD FOREIGN KEY (idmarcacd) REFERENCES marcacd (id);
+ALTER TABLE monitor ADD FOREIGN KEY (idmarcamonitor) REFERENCES marcamonitor (id);
+
+
+
+ALTER TABLE equipo ADD FOREIGN KEY (sector) REFERENCES  areas(id);
+ALTER TABLE equipo ADD FOREIGN KEY (sistemaoperativo) REFERENCES sistemaoperativo(id);
+ALTER TABLE equipo ADD FOREIGN KEY (cpu) REFERENCES  cpu(id);
+ALTER TABLE equipo ADD FOREIGN KEY (motherboard) REFERENCES  motherboard(id);
+ALTER TABLE equipo ADD FOREIGN KEY (memoria) REFERENCES cantmemoria(id);
+ALTER TABLE equipo ADD FOREIGN KEY (video) REFERENCES  placavideo(id);
+ALTER TABLE equipo ADD FOREIGN KEY (discoduro) REFERENCES  discoduro(id);
+ALTER TABLE equipo ADD FOREIGN KEY (`cd-dvd`) REFERENCES  `cd-dvd`(id);
+ALTER TABLE equipo ADD FOREIGN KEY (monitor) REFERENCES monitor(id);
+ALTER TABLE equipo ADD FOREIGN KEY (rango) REFERENCES rango(id);
+
+ALTER TABLE impresora ADD FOREIGN KEY (idmarcaimpresora) REFERENCES marcaimpresora(id);*/
+
+ALTER TABLE impresoralocal ADD FOREIGN KEY (queimpresora) REFERENCES impresora(id);
+ALTER TABLE impresorared ADD FOREIGN KEY (queimpresora) REFERENCES impresora(id);
+
+
+ALTER TABLE impresoralocal ADD FOREIGN KEY (area) REFERENCES areas(id);
+ALTER TABLE impresorared ADD FOREIGN KEY (area) REFERENCES areas(id);
+
+ALTER TABLE impresoralocal ADD FOREIGN KEY (rango) REFERENCES rango(id);
+ALTER TABLE impresorared ADD FOREIGN KEY (rango) REFERENCES rango(id);
+
+
+ALTER TABLE tracking ADD FOREIGN KEY (idincidente) REFERENCES incidentes(id);
+ALTER TABLE tracking ADD FOREIGN KEY (idequipo) REFERENCES equipo(id);

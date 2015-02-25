@@ -1,0 +1,15 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<body>
+	<link href="../Metro/css/modern.css" rel="stylesheet">
+	<div class="message-dialog bg-color-red fg-color-white">
+            <p>El usuario que desea agregar, ya posee un equipo asignado</p>
+            <button class="place-right" onClick="history.back()">Volver</button>
+             <button class="place-right" onClick="location.href='../Login/index.php'">Ver</button>
+        </div>
+	
+	
+	
+</body>
+</hmtl>
+

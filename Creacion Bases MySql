@@ -1,0 +1,173 @@
+CREATE TABLE `areas` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `area` VARCHAR(200) NOT NULL,
+   PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `sistemaoperativo` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `sistemaoperativo` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+);
+CREATE TABLE `cantmemoria` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `cantmemoria` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+CREATE TABLE `usuarios` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nombrecompleto` VARCHAR(100) NOT NULL,
+  `usuario` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `tipo` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+
+
+CREATE TABLE `marcacpu` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `marcacpu` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+CREATE TABLE `cpu` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `idmarcacpu` INT NOT NULL,
+  `modelo` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+
+CREATE TABLE `marcadiscoduro` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `marcadiscoduro` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+CREATE TABLE `discoduro` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `idmarcadiscoduro` INT NOT NULL,
+  `modelo` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+
+CREATE TABLE `marcamotherboard` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `marcamotherboard` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+CREATE TABLE `motherboard` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `idmarcamotherboard` INT NOT NULL,
+  `modelo` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+CREATE TABLE `placavideo` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `placavideo` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+
+CREATE TABLE `marcacd` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `marcacd` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+CREATE TABLE `cd-dvd` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `idmarcacd` INT NOT NULL,
+  `modelo` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+);
+CREATE TABLE `marcamonitor` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `marcamonitor` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+CREATE TABLE `monitor` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `idmarcamonitor` INT NOT NULL,
+  `modelo` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+);
+CREATE TABLE `marcaimpresora` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `marcaimpresora` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+CREATE TABLE `impresora` ( 
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `idmarcaimpresora` INT NOT NULL,
+  `modelo` VARCHAR(100) NOT NULL,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `equipo` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `sector` INT(11) NOT NULL,
+  `oficina` VARCHAR(200) NOT NULL,
+  `interno` VARCHAR(20),
+  `rango` INT(11) NOT NULL,
+  `ip` INT(11) NOT NULL,
+  `usuario` VARCHAR(50) NOT NULL,
+  `sistemaoperativo`INT(11) NOT NULL,
+  `cpu` INT(11) NOT NULL,
+  `motherboard` INT(11) NOT NULL,
+  `memoria` INT(11) NOT NULL,
+  `video` INT(11) NOT NULL,
+  `discoduro` INT(11) NOT NULL,
+  `cd-dvd`INT(11) NOT NULL,
+  `monitor`INT(11) NOT NULL,
+  `serial-monitor` VARCHAR(50),
+   PRIMARY KEY  (`id`)
+); 
+CREATE TABLE `rango` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `rango` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+
+CREATE TABLE `impresoralocal` (
+ `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `area` INT(11) NOT NULL,
+  `oficina` VARCHAR(200) NOT NULL,
+  `queimpresora` INT(11) NOT NULL,
+  `serie`VARCHAR(100),
+  `rango` INT(11) NOT NULL,
+  `ip` INT(11) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+
+CREATE TABLE `impresorared` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `area` INT(11) NOT NULL,
+  `oficina` VARCHAR(200) NOT NULL,
+  `queimpresora` INT(11) NOT NULL,
+  `serie`VARCHAR(100),
+  `rango` INT(11) NOT NULL,
+  `ip` INT(11) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+
+CREATE TABLE `incidentes` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `categoria` VARCHAR(100) NOT NULL,
+  PRIMARY KEY  (`id`)
+); 
+
+CREATE TABLE `tracking` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `idequipo` INT(11) NOT NULL,
+    `idincidente` INT(11) NOT NULL,
+    `fecha` VARCHAR(20) NOT NULL,
+    `tecnico` VARCHAR(50) NOT NULL,
+    `solucion`VARCHAR(350),
+    PRIMARY KEY  (`id`)
+);
+
+/*
+CREATE TABLE `` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `` VARCHAR(100) NOT NULL,
+   PRIMARY KEY  (`id`)
+); 
+
+ */
+

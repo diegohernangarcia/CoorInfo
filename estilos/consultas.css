@@ -1,0 +1,46 @@
+/* CSS Document */
+
+
+#contenedor {
+}
+#cabecera {
+}
+#menu {
+  float: left;
+  width: 20%;
+  border: 10px;
+}
+#contenido {
+  float: left;
+  width: 80%;
+}
+#contenido #principal {
+  float: left;
+  width: 100%;
+}
+
+ 
+#pie {
+  clear: both;
+}
+ 
+<body>
+<div id="contenedor">
+  <div id="cabecera">
+  </div>
+ 
+  <div id="menu">
+  </div>
+ 
+  <div id="contenido">
+    <div id="principal">
+    </div>
+ 
+    <div id="secundario">
+    </div>
+  </div>
+ 
+  <div id="pie">
+  </div>
+</div>
+</body>
